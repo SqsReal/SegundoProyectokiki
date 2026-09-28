@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "SegundoP.22cf2d41\\x64\\Debug\\Main.obj",
+            "outputs": [
+                "SegundoP.22cf2d41\\x64\\Debug\\Main.cpp.obj.dt.module.json",
+                "SegundoP.22cf2d41\\x64\\Debug\\Main.cpp.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
