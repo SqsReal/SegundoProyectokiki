@@ -85,6 +85,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\sebas\Downloads\imgui-master;C:\Users\sebas\Downloads\imgui-master\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,6 +121,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\sebas\Downloads\imgui-master;C:\Users\sebas\Downloads\imgui-master\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,6 +151,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\..\..\Downloads\imgui-master\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui.cpp" />
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
