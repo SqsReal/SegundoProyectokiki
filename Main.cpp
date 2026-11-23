@@ -17,9 +17,9 @@
 #include "imgui_impl_opengl3.h"
 
 
-// ============================================================
+//como vamo?
 // VARIABLES GLOBALES
-// ============================================================
+// 
 
 // Estructura para almacenar un punto
 struct Punto
@@ -107,9 +107,9 @@ int altoVentana = 800;
 const float anchoPanel = 85.0f;
 
 
-// ============================================================
+
 // FUNCIONES AUXILIARES
-// ============================================================
+// 
 
 
 // Agrega un punto a una figura
@@ -139,9 +139,9 @@ void actualizarLimites(Figura& figura)
 }
 
 
-// ============================================================
+
 // ALGORITMO DE BRESENHAM PARA LINEAS
-// ============================================================
+// 
 
 void Bresenham(int x0, int y0, int x1, int y1,
     std::vector<Punto>& pixeles)
@@ -178,9 +178,9 @@ void Bresenham(int x0, int y0, int x1, int y1,
 }
 
 
-// ============================================================
+
 // ALGORITMO DE PUNTO MEDIO PARA CIRCULOS
-// ============================================================
+//
 
 void PuntoMedioCirculo(int xc, int yc, int r,
     std::vector<Punto>& pixeles)
@@ -226,13 +226,10 @@ void PuntoMedioCirculo(int xc, int yc, int r,
 }
 
 
-// ============================================================
-// FUNCION PARA RELLENAR POLIGONOS
-// ============================================================
 
-void rellenarPoligono(
-    const std::vector<Punto>& vertices,
-    std::vector<Punto>& pixeles)
+// FUNCION PARA RELLENAR POLIGONOS
+//
+void rellenarPoligono(const std::vector<Punto>& vertices,std::vector<Punto>& pixeles)
 {
     if (vertices.size() < 3)
         return;
@@ -287,16 +284,10 @@ void rellenarPoligono(
 }
 
 
-// ============================================================
-// FUNCION PARA GENERAR UNA FIGURA
-// ============================================================
 
-Figura generarFigura(
-    TipoFigura tipo,
-    int x0,
-    int y0,
-    int x1,
-    int y1)
+// FUNCION PARA GENERAR UNA FIGURA
+// 
+Figura generarFigura(TipoFigura tipo,int x0,int y0,int x1,int y1)
 {
     Figura figura;
 
@@ -397,12 +388,9 @@ Figura generarFigura(
 
     return figura;
 }
-
-
-// ============================================================
+//
 // FUNCION PARA DETECTAR UNA FIGURA
-// ============================================================
-
+// 
 int seleccionarFigura(int x, int y)
 {
     // Revisamos las figuras desde la ultima creada
@@ -426,9 +414,9 @@ int seleccionarFigura(int x, int y)
 }
 
 
-// ============================================================
+
 // FUNCION PARA TRANSFORMAR FIGURAS
-// ============================================================
+// 
 
 void moverFigura(int indice, int dx, int dy)
 {
@@ -452,9 +440,9 @@ void moverFigura(int indice, int dx, int dy)
 }
 
 
-// ============================================================
+
 // FUNCION PARA CONVERTIR HEXADECIMAL A RGB
-// ============================================================
+// 
 
 bool convertirColor(const char* codigo, ImVec4& color)
 {
@@ -479,20 +467,15 @@ bool convertirColor(const char* codigo, ImVec4& color)
     if (sscanf_s(texto, "%2x%2x%2x", &r, &g, &b) != 3)
         return false;
 
-    color = ImVec4(
-        r / 255.0f,
-        g / 255.0f,
-        b / 255.0f,
-        1.0f
-    );
+    color = ImVec4(r / 255.0f,g / 255.0f,b / 255.0f,1.0f);
 
     return true;
 }
 
 
-// ============================================================
+
 // FUNCION PARA APLICAR COLOR A UNA FIGURA
-// ============================================================
+//
 
 void aplicarColor(int indice)
 {
@@ -508,9 +491,9 @@ void aplicarColor(int indice)
 }
 
 
-// ============================================================
+
 // FUNCION PARA OBTENER EL NOMBRE DEL MODO
-// ============================================================
+// 
 
 const char* obtenerNombreModo()
 {
@@ -533,9 +516,9 @@ const char* obtenerNombreModo()
 }
 
 
-// ============================================================
+
 // FUNCION PARA ACTUALIZAR EL MODO
-// ============================================================
+// 
 
 void cambiarModo()
 {
@@ -546,9 +529,9 @@ void cambiarModo()
 }
 
 
-// ============================================================
+
 // FUNCION PARA DIBUJAR EL FONDO DE CUADROS
-// ============================================================
+// 
 
 void dibujarFondo(
     ImDrawList* drawList,
@@ -584,9 +567,9 @@ void dibujarFondo(
 }
 
 
-// ============================================================
+
 // FUNCION PARA DIBUJAR LAS FIGURAS
-// ============================================================
+// 
 
 void dibujarFiguras(
     ImDrawList* drawList,
@@ -613,9 +596,9 @@ void dibujarFiguras(
 }
 
 
-// ============================================================
+
 // FUNCION QUE DETECTA EL TAMANO DE LA VENTANA
-// ============================================================
+// 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -623,9 +606,9 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 
-// ============================================================
+
 // FUNCION PRINCIPAL
-// ============================================================
+// 
 
 int main()
 {
@@ -686,10 +669,9 @@ int main()
     glViewport(0, 0, 1100, 800);
 
 
-    // ========================================================
+    
     // INICIALIZACION DE DEAR IMGUI
-    // ========================================================
-
+    // 
     IMGUI_CHECKVERSION();
 
     ImGui::CreateContext();
@@ -717,9 +699,9 @@ int main()
     ImGui_ImplOpenGL3_Init("#version 330 core");
 
 
-    // ========================================================
+    
     // VARIABLES PARA EL MOUSE
-    // ========================================================
+    // 
 
     bool teclaQAnterior = false;
     bool teclaWAnterior = false;
@@ -730,9 +712,9 @@ int main()
     bool tecla4Anterior = false;
 
 
-    // ========================================================
+    
     // CICLO PRINCIPAL
-    // ========================================================
+    // 
 
     while (!glfwWindowShouldClose(window))
     {
@@ -762,10 +744,9 @@ int main()
         ImGuiIO& ioActual = ImGui::GetIO();
 
 
-        // ====================================================
+        
         // AREA DE DIBUJO
-        // ====================================================
-
+        // 
         ImVec2 inicioCanvas(
             anchoPanel,
             0.0f
@@ -797,9 +778,9 @@ int main()
         );
 
 
-        // ====================================================
+        
         // PANEL IZQUIERDO: TRANSFORMAR
-        // ====================================================
+        // 
 
         ImGui::SetNextWindowPos(
             ImVec2(0, 10),
@@ -857,9 +838,9 @@ int main()
         ImGui::End();
 
 
-        // ====================================================
+        
         // PANEL DERECHO: COLOR
-        // ====================================================
+        // 
 
         ImGui::SetNextWindowPos(
             ImVec2(anchoVentana - anchoPanel, 10),
@@ -885,20 +866,11 @@ int main()
 
         // Boton azul para cambiar el color
 
-        ImGui::PushStyleColor(
-            ImGuiCol_Button,
-            ImVec4(0.0f, 0.25f, 0.75f, 1.0f)
-        );
+        ImGui::PushStyleColor(ImGuiCol_Button,ImVec4(0.0f, 0.25f, 0.75f, 1.0f));
 
-        ImGui::PushStyleColor(
-            ImGuiCol_ButtonHovered,
-            ImVec4(0.1f, 0.4f, 1.0f, 1.0f)
-        );
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered,ImVec4(0.1f, 0.4f, 1.0f, 1.0f));
 
-        ImGui::PushStyleColor(
-            ImGuiCol_Text,
-            ImVec4(1, 1, 1, 1)
-        );
+        ImGui::PushStyleColor(ImGuiCol_Text,ImVec4(1, 1, 1, 1));
 
 
         if (ImGui::Button("Color", ImVec2(75, 50)))
@@ -972,13 +944,10 @@ int main()
         ImGui::End();
 
 
-        // ====================================================
+        
         // INFORMACION DEL MODO ACTUAL
-        // ====================================================
-
-        ImGui::SetNextWindowPos(
-            ImVec2(anchoPanel + 10, 10),
-            ImGuiCond_Always
+        //
+        ImGui::SetNextWindowPos(ImVec2(anchoPanel + 10, 10),ImGuiCond_Always
         );
 
         ImGui::SetNextWindowSize(
@@ -1017,9 +986,9 @@ int main()
         ImGui::End();
 
 
-        // ====================================================
+        
         // DETECCION DE TECLAS
-        // ====================================================
+        // 
 
         bool teclaQ = glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS;
         bool teclaW = glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS;
@@ -1074,9 +1043,9 @@ int main()
         tecla4Anterior = tecla4;
 
 
-        // ====================================================
+       
         // DETECCION DEL MOUSE
-        // ====================================================
+        // 
 
         double mouseX, mouseY;
 
@@ -1109,9 +1078,9 @@ int main()
         bool mouseLibre = !ioActual.WantCaptureMouse;
 
 
-        // ====================================================
+        
         // MODO TRANSFORMAR
-        // ====================================================
+        // 
 
         if (modoTransformar)
         {
@@ -1158,9 +1127,9 @@ int main()
         }
 
 
-        // ====================================================
+        
         // MODO COLOR
-        // ====================================================
+        // 
 
         else if (modoColor)
         {
@@ -1180,10 +1149,9 @@ int main()
         }
 
 
-        // ====================================================
+        
         // MODO DIBUJO
-        // ====================================================
-
+        // 
         else
         {
             // Detectamos el primer click
@@ -1208,13 +1176,7 @@ int main()
 
                 // Creamos la figura correspondiente
 
-                Figura nuevaFigura = generarFigura(
-                    modoActual,
-                    inicioX,
-                    inicioY,
-                    finalX,
-                    finalY
-                );
+                Figura nuevaFigura = generarFigura(modoActual,inicioX,inicioY,finalX,finalY);
 
 
                 if (!nuevaFigura.pixeles.empty())
@@ -1231,10 +1193,9 @@ int main()
         }
 
 
-        // ====================================================
+        
         // DIBUJAMOS LA FIGURA EN TIEMPO REAL
-        // ====================================================
-
+        // 
         if (dibujando &&
             !modoColor &&
             !modoTransformar)
@@ -1270,19 +1231,14 @@ int main()
         }
 
 
-        // ====================================================
+        
         // RENDERIZADO
-        // ====================================================
+        // 
 
         ImGui::Render();
 
 
-        glClearColor(
-            0.1f,
-            0.1f,
-            0.1f,
-            1.0f
-        );
+        glClearColor(0.1f,0.1f,0.1f,1.0f);
 
         glClear(GL_COLOR_BUFFER_BIT);
 
@@ -1298,9 +1254,9 @@ int main()
     }
 
 
-    // ========================================================
+    
     // LIBERACION DE RECURSOS
-    // ========================================================
+    // 
 
     ImGui_ImplOpenGL3_Shutdown();
 
